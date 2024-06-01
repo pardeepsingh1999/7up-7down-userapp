@@ -1,0 +1,30 @@
+$primary: #0d6efd;
+$grey: rgba(0, 0, 0, 0.3);
+$lightGrey: rgba(0, 0, 0, 0.05);
+
+body {
+  margin: 0;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.text-color-grey {
+  color: $grey;
+}
+
+.mainContainer {
+  min-height: 90vh;
+  padding: 10px;
+}
+
+.flex-fill {
+  flex: 1 1 auto;
+}
+
+.header,
+.footer {
+  background: $lightGrey;
+  padding: 10px;
+}
