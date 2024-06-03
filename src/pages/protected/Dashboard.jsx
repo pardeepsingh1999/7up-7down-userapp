@@ -12,7 +12,13 @@ import { errorHandler, showToast } from "../../helpers";
 import { getAndUpdateUserData } from "../../redux/actions";
 import { rolldice } from "../../http/http-calls";
 import { Box, Stack } from "@mui/system";
-import { Chip, ImageList, ImageListItem, LinearProgress } from "@mui/material";
+import {
+  Alert,
+  Chip,
+  ImageList,
+  ImageListItem,
+  LinearProgress,
+} from "@mui/material";
 import dice1 from "../../assets/img/dice1.png";
 import dice2 from "../../assets/img/dice2.png";
 import dice3 from "../../assets/img/dice3.png";
@@ -20,6 +26,7 @@ import dice4 from "../../assets/img/dice4.png";
 import dice5 from "../../assets/img/dice5.png";
 import dice6 from "../../assets/img/dice6.png";
 import diceLoading from "../../assets/img/dice-loading.gif";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -224,6 +231,16 @@ const Dashboard = () => {
                 <FormControlLabel value={12} control={<Radio />} label="7 Up" />
               </RadioGroup>
             </FormControl>
+          </Box>
+
+          <Box variant="contained" sx={{ mt: 2, mb: 2 }}>
+            <Alert
+              icon={<EmojiEventsIcon fontSize="inherit" />}
+              severity="success"
+            >
+              If you win, you will receive {betNumber === 7 ? "5x" : "2x"} your
+              amount! Good luck!
+            </Alert>
           </Box>
         </CardContent>
 
